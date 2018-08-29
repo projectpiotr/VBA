@@ -1,3 +1,5 @@
+Kod do otwierania pliku i wklejania w komórkę A1 za pomocą Zaczytaj z tekstu
+
 Sub czytaj()
 
 Application.ScreenUpdating = False
