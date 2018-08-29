@@ -1,0 +1,33 @@
+Sub czytaj()
+
+Application.ScreenUpdating = False
+  
+Z = Application.GetOpenFilename(FileFilter:="Plik tekstowy (*.txt), *.txt")
+If Z = False Then Exit Sub
+
+Z = "TEXT;" & Z
+    
+    With ActiveSheet.QueryTables.Add(Connection:=Z, Destination:=Range("A1"))
+
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = True
+        .RefreshOnFileOpen = False
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .TextFilePromptOnRefresh = False
+        .TextFilePlatform = 1250                 'jakie ma być kodowanie
+        .TextFileStartRow = 5
+        .TextFileParseType = xlDelimited
+        .TextFileTextQualifier = xlTextQualifierDoubleQuote
+        .TextFileTrailingMinusNumbers = True
+        .Refresh BackgroundQuery:=False
+        
+        End With
+        
+        
+End Sub
