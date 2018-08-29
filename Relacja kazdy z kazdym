@@ -1,0 +1,37 @@
+W kolumnie A podajemy interesujące wartość zaczynając od wierwsza dwa.
+W kolumnie B podejemy wartości, które chcemy połączyć z każdym rekordem z kolumny A
+
+Wyniki otrzymujemy w D i E
+
+
+Sub mLLKazdyZKazdym()
+'
+' mLLusunZnakiZTekstu Makro
+' mLL makro usuwa wybraną listę znaków z zakresu tekstu
+'
+
+'
+    Range("A2").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Dim rngPierwsza As Range
+    Set rngPierwsza = Selection
+    
+    Dim intIterator As Long
+    intIterator = 2
+     
+    Range("B2").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Dim rngDruga As Range
+    Set rngDruga = Selection
+    
+
+    For Each cellic In rngPierwsza.Cells
+        For Each cellicc In rngDruga.Cells
+            Cells(intIterator, 4).Value = cellic.Value
+            Cells(intIterator, 5).Value = cellicc.Value
+            intIterator = intIterator + 1
+            
+        Next
+    Next
+    
+End Sub
