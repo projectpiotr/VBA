@@ -1,0 +1,8 @@
+Range("A1").CurrentRegion.Select
+
+On Error Resume Next
+   Dim komorka As Range          ' zmienna która będzie wskazywała aktualną komórkę
+   For Each komorka In Selection ' dla każdej zaznaczonej komórki rób:
+                                 ' trim - usuwa białe znaki z obu lewej i prawej tekstu.
+      komorka = Trim(komorka)    ' wynik zapisujemy z powrotem do tej samej komórki
+   Next komorka                  ' koniec for. Czyli przejdź do następnej komórki
