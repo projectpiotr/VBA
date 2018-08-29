@@ -1,0 +1,5 @@
+Wklej na początek
+Application.ScreenUpdating = False
+
+Wklej na koniec
+Application.ScreenUpdating = True
